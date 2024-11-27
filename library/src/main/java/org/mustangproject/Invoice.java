@@ -67,6 +67,8 @@ public class Invoice implements IExportableTransaction {
 	protected String vatDueDateTypeCode = null;
 	protected String creditorReferenceID; // required when direct debit is used.
 	private BigDecimal roundingAmount=null;
+	private String paymentMeansInformation;
+	private String paymentMeansCode;
 
 	public Invoice() {
 		ZFItems = new ArrayList<>();
@@ -958,4 +960,21 @@ public class Invoice implements IExportableTransaction {
 		return this;
 	}
 
+	public void setPaymentMeansCode(String paymentMeansCode) {
+		this.paymentMeansCode = paymentMeansCode;
+	}
+
+	@Override
+	public String getPaymentMeansCode() {
+		return paymentMeansCode;
+	}
+
+	public void setPaymentMeansInformation(String paymentMeansInformation) {
+		this.paymentMeansInformation = paymentMeansInformation;
+	}
+
+	@Override
+	public String getPaymentMeansInformation() {
+		return paymentMeansInformation;
+	}
 }

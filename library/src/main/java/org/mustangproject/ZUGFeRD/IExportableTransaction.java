@@ -542,4 +542,12 @@ public interface IExportableTransaction {
 	default String getCreditorReferenceID() {
 		return null;
 	}
+
+	default String getPaymentMeansCode() {
+		return null;
+	}
+
+	default String getPaymentMeansInformation() {
+		return null;
+	}
 }

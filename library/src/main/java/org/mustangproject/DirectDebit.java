@@ -21,6 +21,16 @@ public class DirectDebit implements IZUGFeRDTradeSettlementDebit {
 	protected String mandate;
 
 	/**
+	 * payment means code (BT-81 / UNTDID 4461)
+	 */
+	protected String paymentMeansCode = "58";
+
+	/**
+	 * Payment means description (BT-82)
+	 */
+	protected String paymentMeansInformation = "SEPA credit transfer";
+
+	/**
 	 * bean constructor
 	 */
 	public DirectDebit() {
@@ -37,6 +47,16 @@ public class DirectDebit implements IZUGFeRDTradeSettlementDebit {
 		this.mandate = mandate;
 	}
 
+	public DirectDebit setPaymentMeansCode(String paymentMeansCode) {
+		this.paymentMeansCode = paymentMeansCode;
+		return this;
+	}
+
+	public DirectDebit setPaymentMeansInformation(String paymentMeansInformation) {
+		this.paymentMeansInformation = paymentMeansInformation;
+		return this;
+	}
+
 	/***
 	 * getter for the IBAN
 	 * @return IBAN
@@ -49,5 +69,15 @@ public class DirectDebit implements IZUGFeRDTradeSettlementDebit {
 	@Override
 	public String getMandate() {
 		return this.mandate;
+	}
+
+	@Override
+	public String getPaymentMeansCode() {
+		return this.paymentMeansCode;
+	}
+
+	@Override
+	public String getPaymentMeansInformation() {
+		return this.paymentMeansInformation;
 	}
 }
